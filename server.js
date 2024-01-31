@@ -11,14 +11,16 @@ const password = encodeURIComponent("adminpassword");
 /* APP */
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+const cors = require('cors')
+app.use(cors({ origin: true }))
 
 /* STATIC FILES */
 app.use(express.static('public'))
 
 const mgdb = require('mongoose')
-mgdb.connect( `mongodb+srv://${username}:${password}@cluster0.ad0z395.mongodb.net/
+mgdb.connect(`mongodb+srv://${username}:${password}@cluster0.ad0z395.mongodb.net/
 `)
- 
+
 const db = mongoose.connection
 db.on('error', (error) => console.log("ERROR: -> GjerrildAPI kunne ikke oprette adgang til MongoDB"))
 db.once('open', () => console.log("SUCCESS: -> GjerrildAPI oprettede adgang til MongoDB"))
