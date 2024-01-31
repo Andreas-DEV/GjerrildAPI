@@ -16,6 +16,9 @@ const detskerSchema = new mgdb.Schema({
     },
     title: {
         type: String
+    },
+    link: {
+        type: String
     }
 })
 
