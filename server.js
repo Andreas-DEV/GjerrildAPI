@@ -1,7 +1,8 @@
+require('dotenv').config()
 const express = require('express')
 const { default: mongoose } = require('mongoose')
 const app = express()
-const PORT = 1337
+const PORT = process.env.PORT
 
 const username = encodeURIComponent("admin");
 const password = encodeURIComponent("adminpassword");
