@@ -1,6 +1,6 @@
 const mgdb = require('mongoose')
 
-const contentSchema = new mgdb.Schema({
+const homeSchema = new mgdb.Schema({
     title: {
         type: String,
         required: [true, 'Mangler Titel content']
@@ -10,7 +10,11 @@ const contentSchema = new mgdb.Schema({
     },
     content: {
         type: String,
-        required: [true, 'Mangler content input']
+        //required: [true, 'Mangler content input']
+    },
+    content2: {
+        type: String,
+        //required: [true, 'Mangler content input']
     },
     image: {
         type: String
@@ -21,4 +25,4 @@ const contentSchema = new mgdb.Schema({
     }
 })
 
-module.exports = mgdb.model('Content', contentSchema, 'content')
+module.exports = mgdb.model('Home', homeSchema, 'home')

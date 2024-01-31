@@ -33,7 +33,7 @@ app.get('/', async (req, res) => {
 })
 
 //ROUTES
-app.use('/content', require('./routes/content.routes'))
+app.use('/home', require('./routes/home.routes'))
 app.use('/nyhed', require('./routes/nyheder.routes'))
 app.use('/events', require('./routes/events.routes'))
 app.use('/rooms', require('./routes/rooms.routes'))
