@@ -5,7 +5,7 @@ const homeSchema = new mgdb.Schema({
         type: String,
         required: [true, 'Mangler Titel content']
     },
-    undertitle: {
+    subtitle: {
         type: String,
     },
     content: {
@@ -17,7 +17,7 @@ const homeSchema = new mgdb.Schema({
         //required: [true, 'Mangler content input']
     },
     image: {
-        type: Enum
+        type: String
     },
     done: {
         type: Boolean,
