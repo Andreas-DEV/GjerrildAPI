@@ -41,6 +41,7 @@ app.use('/restaurant', require('./routes/restaurant.routes'))
 app.use('/activities', require('./routes/activities.routes'))
 app.use('/images', require('./routes/images.routes'))
 app.use('/happens', require('./routes/detsker.routes'))
+app.use('/contact', require('./routes/contact.routes'))
 
 // NO MATCH IN DATABASE
 app.get('*', async (request, response) => {
