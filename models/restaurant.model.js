@@ -13,7 +13,7 @@ const restaurantSchema = new mgdb.Schema({
         type: String,
         //required: [true, '-> Content mangles']
     },
-    conten4: {
+    content3: {
         type: String,
         //required: [true, '-> Content mangles']
     },
