@@ -7,7 +7,7 @@ const imageSchema = new mgdb.Schema({
     },
     image: {
         type: String,
-        required: [true, '-> Billede påkrævet.']
+        //required: [true, '-> Billede påkrævet.']
     }
 })
 

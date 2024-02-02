@@ -39,7 +39,7 @@ app.use('/events', require('./routes/events.routes'))
 app.use('/rooms', require('./routes/rooms.routes'))
 app.use('/restaurant', require('./routes/restaurant.routes'))
 app.use('/activities', require('./routes/activities.routes'))
-app.use('/images', require('./routes/images.routes'))
+app.use('/galleri', require('./routes/images.routes'))
 app.use('/happens', require('./routes/detsker.routes'))
 app.use('/contact', require('./routes/contact.routes'))
 
