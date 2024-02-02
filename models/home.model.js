@@ -17,7 +17,7 @@ const homeSchema = new mgdb.Schema({
         //required: [true, 'Mangler content input']
     },
     image: {
-        type: String
+        type: Enum
     },
     done: {
         type: Boolean,
