@@ -7,7 +7,19 @@ const restaurantSchema = new mgdb.Schema({
     },
     content: {
         type: String,
-        required: [true, '-> Content mangles']
+        //required: [true, '-> Content mangles']
+    },
+    content2: {
+        type: String,
+        //required: [true, '-> Content mangles']
+    },
+    conten4: {
+        type: String,
+        //required: [true, '-> Content mangles']
+    },
+    content4: {
+        type: String,
+        //required: [true, '-> Content mangles']
     },
     done: {
         type: Boolean,
