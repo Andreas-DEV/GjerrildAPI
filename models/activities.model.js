@@ -1,11 +1,15 @@
 const mgdb = require('mongoose')
 
 const activitiesSchema = new mgdb.Schema({
+    underside: {
+        type: String,
+        required: [true, '-> Underside navn mangler.']
+    },
     title: {
         type: String,
         required: [true, '-> Kræver en title']
     },
-    activity: {
+    content: {
         type: String,
         required: [true, '-> Aktivitet mangles']
     },
