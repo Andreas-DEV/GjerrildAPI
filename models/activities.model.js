@@ -8,6 +8,9 @@ const activitiesSchema = new mgdb.Schema({
     links: {
         type: String
     },
+    distance: {
+        trype: String
+    },
     activity: {
         type: String,
         required: [true, '-> Aktivitet mangles']
