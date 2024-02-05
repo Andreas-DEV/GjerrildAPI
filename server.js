@@ -43,6 +43,15 @@ app.use('/galleri', require('./routes/images.routes'))
 app.use('/happens', require('./routes/detsker.routes'))
 app.use('/contact', require('./routes/contact.routes'))
 
+/* AKTIVITETER */
+app.use('/dyrepark', require('./routes/aktiviteter/dyrepark.routes'))
+app.use('/kattegat', require('./routes/aktiviteter/kattegat.routes'))
+app.use('/nationalpark', require('./routes/aktiviteter/nationalpark.routes'))
+app.use('/nordstrand', require('./routes/aktiviteter/nordstrand.routes'))
+app.use('/reepark', require('./routes/aktiviteter/reepark.routes'))
+app.use('/sommerland', require('./routes/aktiviteter/sommerland.routes'))
+
+
 // NO MATCH IN DATABASE
 app.get('*', async (request, response) => {
     response.status(404).json({

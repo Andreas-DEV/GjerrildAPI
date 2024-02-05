@@ -1,11 +1,11 @@
 const mgdb = require('mongoose')
 
-const activitiesSchema = new mgdb.Schema({
+const nordstrandSchema = new mgdb.Schema({
     title: {
         type: String,
         required: [true, '-> Kræver en title']
     },
-    activity: {
+    content: {
         type: String,
         required: [true, '-> Aktivitet mangles']
     },
@@ -18,4 +18,4 @@ const activitiesSchema = new mgdb.Schema({
     }
 })
 
-module.exports = mgdb.model('Activities', activitiesSchema, 'activities')
+module.exports = mgdb.model('Nordstrand', nordstrandSchema, 'nordstrand')
