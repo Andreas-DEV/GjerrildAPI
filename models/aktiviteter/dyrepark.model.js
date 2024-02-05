@@ -7,7 +7,15 @@ const dyreparkSchema = new mgdb.Schema({
     },
     content: {
         type: String,
-        required: [true, '-> Aktivitet mangles']
+        required: [true, '-> Content mangles']
+    },
+    content2: {
+        type: String,
+        required: [true, '-> Content mangles']
+    },
+    content3: {
+        type: String,
+        required: [true, '-> Content mangles']
     },
     image: {
         type: String
