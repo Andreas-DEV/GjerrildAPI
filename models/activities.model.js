@@ -9,7 +9,7 @@ const activitiesSchema = new mgdb.Schema({
         type: String
     },
     distance: {
-        trype: String
+        type: String
     },
     activity: {
         type: String,
