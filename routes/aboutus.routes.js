@@ -2,10 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 /* CONTENT MODELLEN */
-const Home = require('../models/home.model')
-
-/* const formData = require('express-form-data')
-router.use(formData.parse()) */
+const Aboutus = require('../models/aboutus.model')
 
 const multer = require('multer')
 const upload = multer({
@@ -22,10 +19,10 @@ const upload = multer({
 /* GET - ALL */
 router.get('/', async (request, response) => {
     try {
-        let allHome = await Home.find();
+        let allAbout = await Aboutus.find();
         return response.status(200).json({
             ok: "Det sker endpoint",
-            content: allHome
+            content: allAbout
         });
     } catch (error) {
         return response.status(400).json({
@@ -36,9 +33,9 @@ router.get('/', async (request, response) => {
 
 /* GET - SELECTED */
 router.get('/:id', async (request, response) => {
-    let home = await Home.findById(request.params.id)
+    let aboutus = await Aboutus.findById(request.params.id)
     return response.status(200).json({
-        content: home
+        content: aboutus
     })
 })
 
@@ -46,12 +43,12 @@ router.get('/:id', async (request, response) => {
 router.post('/', upload.single("image"), async (request, response) => {
     console.log('-> POST REQUEST')
     try {
-        let home = new Home(request.body)
-        home.image = request.file ? request.file.filename : null
-        await home.save()
+        let aboutus = new Aboutus(request.body)
+        aboutus.image = request.file ? request.file.filename : null
+        await aboutus.save()
         return response.status(201).json({
             message: "SUCCESS: -> Nyt DB element blev oprettet",
-            created: home
+            created: aboutus
         })
     } catch (error) {
         return response.status(400).json({
@@ -62,12 +59,11 @@ router.post('/', upload.single("image"), async (request, response) => {
 
 /* PUT */
 router.put('/:id', upload.single("image"), async (request, response) => {
-    console.log('-> PUT Request');
     try {
-        if(request.file){
+        if (request.file) {
             request.body.image = request.file.filename
         }
-        let home = await Home.findByIdAndUpdate({
+        let aboutus = await Aboutus.findByIdAndUpdate({
             _id: request.params.id
         },
             request.body,
@@ -75,9 +71,15 @@ router.put('/:id', upload.single("image"), async (request, response) => {
                 new: true
             })
 
+        if (aboutus == null) {
+            return response.status(404).json({
+                message: `-> ${request.params.id}`,
+                updated: null
+            })
+        }
         return response.status(201).json({
             message: "Content blev rettet",
-            updated: home
+            updated: aboutus
         })
     } catch (error) {
         return response.status(400).json({
@@ -89,15 +91,15 @@ router.put('/:id', upload.single("image"), async (request, response) => {
 /* DELETE */
 router.delete('/:id', async (request, response) => {
     try {
-        let home = await Home.findByIdAndDelete(request.params.id)
-        if (home == null) {
+        let aboutus = await Aboutus.findByIdAndDelete(request.params.id)
+        if (aboutus == null) {
             return response.status(404).json({
                 deleted: null,
                 message: "-> Dette event fandes ikke og kunne ikke blive slettet"
             })
         }
         return res.status(200).json({
-            deleted: home,
+            deleted: aboutus,
             message: `-> ${request.body} blev slettet`
         })
 
