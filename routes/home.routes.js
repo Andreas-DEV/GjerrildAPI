@@ -91,12 +91,12 @@ router.put('/:id', upload.single("image"), async (request, response) => {
                 new: true
             })
 
-        if (content == null) {
+       /*  if (content == null) {
             return response.status(404).json({
                 message: `-> ${request.params.id}`,
                 updated: null
             })
-        }
+        } */
         return response.status(201).json({
             message: "Content blev rettet",
             updated: home
