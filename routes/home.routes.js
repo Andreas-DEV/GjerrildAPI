@@ -79,6 +79,7 @@ router.post('/', upload.single("image"), async (request, response) => {
 
 /* PUT */
 router.put('/:id', upload.single("image"), async (request, response) => {
+    console.log('-> PUT Request');
     try {
         if(request.file){
             request.body.image = request.file.filename
